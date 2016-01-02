@@ -1,0 +1,87 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Ethereum Genesis Block Hash</title>
+  <meta name="Description" content="Check the current block hash of the Ethereum Project - the Ether ETH">
+  <meta name="Keywords" content="Ethereum block hash, Ethereum, ETH, block hash, ether block hash, block, Cryptocurrency, BitCoin">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <!--[if lt IE 8]>
+  <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <main class="container">
+    <header class="site-header">
+      <div class="container txt-center">
+        <a href="/" class="author-thumb">
+          <img src="http://personalfintech.com/wp-content/uploads/2015/08/ethereum-logo.png" alt="Ethereum">
+        </a>
+        <h1>Ethereum Genesis Block Hash</h1>
+        <noscript id="created">If you're seeing this, you're not seeing the current hash and please enable javascript to use this site.</noscript>
+        <hr class="hr">
+      </div>
+    </header>
+    <section class="main-content">
+      <section class="posts txt-center container">
+        <h2 id="ethhash">0x11bbe8db4e347b4e8c937c1c8370e4b5ed33adb3db69cbdb7a38e1e50b1b82fa</h2>
+      </section>
+      <hr class="hr">
+
+
+    </section>
+    <div class="clearfix"></div>
+    <footer class="site-footer txt-center">
+      <small><a href="http://nikhilmohan.in" target="_blank">nikhilmohan.in</a> | <a href="https://etherchain.org" target="_blank">etherchain.org</a></small>
+    </footer>
+
+    <pre><code id="apiresp">{
+      "status": 1,
+      "data": [
+      {
+        "number": 0,
+        "hash": "0xd4e56740f876aef8c010b86a40d5f56745a118d0906a34e69aec8c0db1cb8fa3",
+        "parentHash": "0xd4e56740f876aef8c010b86a40d5f56745a118d0906a34e69aec8c0db1cb8fa3",
+        "uncleHash": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+        "coinbase": "0x0000000000000000000000000000000000000000",
+        "root": "0xd7f8974fb5ac78d9ac099b9ad5018bedc2ce0a72dad1827a1709da30580f0544",
+        "txHash": "0xd7f8974fb5ac78d9ac099b9ad5018bedc2ce0a72dad1827a1709da30580f0544",
+        "difficulty": 17179869184,
+        "gasLimit": 5000,
+        "gasUsed": 0,
+        "time": "0000-00-00 00:00:00",
+        "extra": "0x11bbe8db4e347b4e8c937c1c8370e4b5ed33adb3db69cbdb7a38e1e50b1b82fa",
+        "mixDigest": null,
+        "nonce": "0x0000000000000042",
+        "tx_count": 0,
+        "uncle_count": 0,
+        "size": 540,
+        "blockTime": null
+      }
+      ]
+    }
+  </code></pre>
+
+  <hr class="hr">
+
+</main>
+<script>
+var xhReq = new XMLHttpRequest();
+xhReq.open("GET", "https://etherchain.org/api/block/0", false);
+xhReq.send(null);
+var serverResponse = xhReq.responseText;
+document.getElementById("apiresp").innerHTML = JSON.stringify(JSON.parse(serverResponse),null,2);
+var parsedJSON = eval('('+serverResponse+')');
+var anyDiv = document.getElementById("ethhash"),
+html = parsedJSON.data[0].extra;
+anyDiv.innerHTML = html;
+</script>
+</body>
+</html>
