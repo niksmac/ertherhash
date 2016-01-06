@@ -1,5 +1,5 @@
 # ertherhash
-Simple website to show current Ethereum Ether Hash
+Simple website to show Ethereum Genesis Block Hash
 
 ## API
 Using [etherchain.org](https://etherchain.org/frontier) as API
